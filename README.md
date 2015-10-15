@@ -17,7 +17,7 @@ public class CarViewController {
 	public List<CarDTO> getCarsByModelAndHorsePower(String model, Integer minumuHp){
 		ClientQuery query = new ClientQuery();
 		QCar qcar = QCar.qcar;
-		query.and(qcar.model.eq(model)).and(qcar.horsePower.get(minumuHp));
+		query.and(qcar.model.eq(model)).and(qcar.horsePower.get(minumuHp)).orderBy(qcar.orderByHorsePower(OrderEnum.ASC));
 		return carService.searchCars(query);
 	}
 }
