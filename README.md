@@ -11,15 +11,16 @@ It was build for a project with the following architecture:
 
 In a nuthshell: model understand abount domain entities but view only knows about DTO. This project aims to allow the view layer to create dynamic querys for the DTOs and transform that query into a model query. If we have an entity Car and a CarDTO class for communication between the view and the business, we could do something like this in the view controller.
 
-  public class CarViewController {
-  	CarService carService;
-  	public List<CarDTO> getCarsByModelAndHorsePower(String model, Integer minumuHp){
-  		ClientQuery query = new ClientQuery();
-  		QCar qcar = QCar.qcar;
-  		query.and(qcar.model.eq(model)).and(qcar.horsePower.get(minumuHp));
-  		return carService.searchCars(query);
-  	}
-  }
+public class CarViewController {
+
+	CarService carService;
+	public List<CarDTO> getCarsByModelAndHorsePower(String model, Integer minumuHp){
+		ClientQuery query = new ClientQuery();
+		QCar qcar = QCar.qcar;
+		query.and(qcar.model.eq(model)).and(qcar.horsePower.get(minumuHp));
+		return carService.searchCars(query);
+	}
+}
 
 
 How does it works?
