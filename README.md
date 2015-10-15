@@ -1,7 +1,7 @@
 # Vidyq
 Prototype for creating dynamic querys from the view layer in a MVC pattern while keeping layers separated-
 
-Small prototype to be able to do different querys to an entity from the view layer in an MVC pattern application for java.
+Vidyq stands for View Dynamic Queries, a small prototype to be able to do different querys to an entity from the view layer in an MVC pattern application for java.
 
 It was build for a project with the following architecture:
 
